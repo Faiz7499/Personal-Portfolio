@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Layout from './Components/layout';
+import Navbar from './Components/navbar';
+import LoadingBar from 'react-top-loading-bar';
+import { useState } from 'react';
+import ScrollAnimation from './Components/ScrollAnimation';
+
 
 function App() {
+  const [progress,steprogress]=useState(0);
+  function setnn(progress){
+    steprogress(progress);
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+       <LoadingBar
+        color='red'
+        progress={progress}
+   
+      />
+         <LoadingBar
+         height={4}
+         color='red'
+         progress={progress}
+       />
+   <Navbar />
+   <br/>
+   <br/>
+  
+   <Layout setnn={setnn}/>
+   <ScrollAnimation />
     </div>
   );
 }
 
 export default App;
+
+
