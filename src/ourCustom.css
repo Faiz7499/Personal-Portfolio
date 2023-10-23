@@ -2,7 +2,7 @@
   width: 100vw;
   list-style-type: none;
   margin: 0;
-  padding: 10;
+  padding: 10px 10px 10px 0px;
   overflow: hidden;
   position: fixed;
   top: 0;
@@ -26,8 +26,11 @@
   float: left;
   color: red;
     font-weight: 600;
-  margin-left: 10px;
-}
+    
+  }
+  .Topname a{
+    margin-right: 20px;
+  }
 .navsbtn {
   font-family: 'Roboto Condensed', sans-serif;
   float: right;
