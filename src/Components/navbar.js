@@ -2,13 +2,13 @@ import React from 'react';
 import '../App.css';
 import '../ourCustom.css';
 import Sidepannel from './sidepannel';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 
 function Navbar() {
   
   const[side,setside]=useState(false);
-  // const [isScrollingUp, setIsScrollingUp] = useState(false);
+  const [isScrollingUp, setIsScrollingUp] = useState(false);
   const click=()=>{
     if (side===false) {
       setside(true);
@@ -19,20 +19,20 @@ function Navbar() {
   }
   
 
-  // useEffect(() => {
-  //   let prevScrollY = window.scrollY;
-  //   const handleScroll = () => {
-  //     const currentScrollY = window.scrollY;
-  //     setIsScrollingUp(currentScrollY < prevScrollY);
-  //     prevScrollY = currentScrollY;
-  //   };
+  useEffect(() => {
+    let prevScrollY = window.scrollY;
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsScrollingUp(currentScrollY < prevScrollY);
+      prevScrollY = currentScrollY;
+    };
 
-  //   window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
    <>
